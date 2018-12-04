@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>FriendFinder</title>
+
+  <!-- Latest compiled and minified CSS & JS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <script src="https://code.jquery.com/jquery.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+  <!-- Font Awesome Glyphicons -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+
+  <!-- Chosen -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.5.1/chosen.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.5.1/chosen.jquery.min.js"></script>
+
+</head>
+
+<body>
+
+  <div class="container">
+
+    <h2>Deck of Cards</h2>
+    
+
+    <br>
+    <br>
+
+    <!-- Deal Button -->
+    <button type="submit" class="btn btn-primary " id="deal">
+     Deal Card</button>
+    <!-- Shuffle Button -->
+    <button type="submit" class="btn btn-primary " id="shuffle">
+      Shuffle Deck</button>
+    
+    <!-- Cut Button -->
+    <button type="submit" class="btn btn-primary " id="cutDeck">
+      Cut Deck</button>
+    <!-- Order Button -->
+    <button type="submit" class="btn btn-primary " id="order">
+      Order Remaining Deck</button>
+    <!-- Rebuild Button -->
+    <button type="submit" class="btn btn-primary " id="rebuild">
+      Rebuild Deck</button>
+      <br> <br>
+    <!-- Discard Input -->
+    <input type="text" id="discard" class="form-control">
+    <!-- Discard Button -->
+    <button type="submit" class="btn btn-primary " id="discardCard">
+      Discard Card</button>
+    <hr>
+    <footer class="footer">
+      <div class="container">
+        <p><a href="/api/cards">API for cards</a> | <a href="https://github.com/mschumann82/deckOfCards">GitHub Repo</a></p>
+      </div>
+    </footer>
+
+  </div>
+
+  
+
+</body>
+
+</html>
