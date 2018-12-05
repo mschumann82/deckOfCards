@@ -12,8 +12,6 @@
       
 		
 
-  
-
 </head>
 
 <body>
@@ -100,26 +98,26 @@
 
   function getCards() {
     
-    $.get("/api/cards",  function(data) { // AJAX get the data to the cards API.
+    $.get("/api/cards",  function(data) { // get the data for the cards.
       
       originalOrder = data;
-      console.log(originalOrder);
+      //console.log(originalOrder);
       playedDeal = data;
-      console.log(playedDeal);
+      //console.log(playedDeal);
       });
   }
-  getCards();
+  getCards(); //call function on page load.
 
 
 
 
-  function dealCard() {
+  function dealCard() { //deals next card if dealt === false.
    
     event.preventDefault();
     let dealtCard = {};
     console.log(playedDeal);
     $("#results").empty(); // empties results div.
-    // AJAX get the data to the cards API.
+    
       for (let i = 0; i < playedDeal.length; i++) {
         if (playedDeal[i].dealt === true) {
           console.log("this card has been dealt");
@@ -146,7 +144,7 @@
     };
     
     
-  function shuffleCards() {
+  function shuffleCards() { // shuffles cards in random order.
     event.preventDefault();
     $("#results").empty();
     playedDeal = playedDeal.sort(function(a, b) {return 0.5 - Math.random()});
@@ -157,7 +155,7 @@
     }
   }
 
-  function cutDeck() {
+  function cutDeck() { // cuts the deck based on the number you enter.
     event.preventDefault();
     $("#results").empty();
     let cut = $("#cut").val().trim();
@@ -192,13 +190,13 @@
     
   }
 
-  function compare(a,b) {
-  if (playedDeal.number < playedDeal.number)
-    return -1;
-  if (playedDeal.number > playedDeal.number)
-    return 1;
-  return 0;
-}
+//   function compare(a,b) {
+//   if (playedDeal.number < playedDeal.number)
+//     return -1;
+//   if (playedDeal.number > playedDeal.number)
+//     return 1;
+//   return 0;
+// }
 
   function orderCards() {
     event.preventDefault();
