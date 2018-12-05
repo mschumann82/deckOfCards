@@ -1,213 +1,369 @@
 //default cards.
 let cards = [
     {
+        "number": 1,
         "suit": "spades",
-        "value": 2
+        "dealt": false,
+        "value": "2",
+        "discard": false
       },
       {
+        "number": 2,
         "suit": "spades",
-        "value": 3
+        "dealt": false,
+        "value": "3",
+        "discard": false
       },
       {
+        "number": 3,
         "suit": "spades",
-        "value": 4
+        "dealt": false,
+        "value": "4",
+        "discard": false
       },
       {
+        "number": 4,
         "suit": "spades",
-        "value": 5
+        "dealt": false,
+        "value": "5",
+        "discard": false
       },
       {
+        "number": 5,
         "suit": "spades",
-        "value": 6
+        "dealt": false,
+        "value": "6",
+        "discard": false
       },
       {
+        "number": 6,
         "suit": "spades",
-        "value": 7
+        "dealt": false,
+        "value": "7",
+        "discard": false
       },
       {
+        "number": 7,
         "suit": "spades",
-        "value": 8
+        "dealt": false,
+        "value": "8",
+        "discard": false
       },
       {
+        "number": 8,
         "suit": "spades",
-        "value": 9
+        "dealt": false,
+        "value": "9",
+        "discard": false
       },
       {
+        "number": 9,
         "suit": "spades",
-        "value": 10
+        "dealt": false,
+        "value": "10",
+        "discard": false
       },
       {
+        "number": 10,
         "suit": "spades",
-        "value": "J"
+        "dealt": false,
+        "value": "J",
+        "discard": false
       },
       {
+        "number": 11,
         "suit": "spades",
-        "value": "Q"
+        "dealt": false,
+        "value": "Q",
+        "discard": false
       },
       {
+        "number": 12,
         "suit": "spades",
-        "value": "K"
+        "dealt": false,
+        "value": "K",
+        "discard": false
       },
       {
+        "number": 13,
         "suit": "spades",
-        "value": "A"
+        "dealt": false,
+        "value": "A",
+        "discard": false
       },
       {
-      "suit": "hearts",
-      "value": 2
+        "number": 14,
+        "suit": "hearts",
+        "dealt": false,
+        "value": "2",
+        "discard": false
     },
     {
+      "number": 15,
       "suit": "hearts",
-      "value": 3
+      "dealt": false,
+      "value": "3",
+      "discard": false
     },
     {
+      "number": 16,
       "suit": "hearts",
-      "value": 4
+      "dealt": false,
+      "value": "4",
+      "discard": false
     },
     {
+      "number": 17,
       "suit": "hearts",
-      "value": 5
+      "dealt": false,
+      "value": "5",
+      "discard": false
     },
     {
+      "number": 18,
       "suit": "hearts",
-      "value": 6
+      "dealt": false,
+      "value": "6",
+      "discard": false
     },
     {
+      "number": 19,
       "suit": "hearts",
-      "value": 7
+      "dealt": false,
+      "value": "7",
+      "discard": false
     },
     {
+      "number": 20,
       "suit": "hearts",
-      "value": 8
+      "dealt": false,
+      "value": "8",
+      "discard": false
     },
     {
+      "number": 21,
       "suit": "hearts",
-      "value": 9
+      "dealt": false,
+      "value": "9",
+      "discard": false
     },
     {
+      "number": 22,
       "suit": "hearts",
-      "value": 10
+      "dealt": false,
+      "value": "10",
+      "discard": false
     },
     {
+      "number": 23,
       "suit": "hearts",
-      "value": "J"
+      "dealt": false,
+      "value": "J",
+      "discard": false
     },
     {
+      "number": 24,
       "suit": "hearts",
-      "value": "Q"
+      "dealt": false,
+      "value": "Q",
+      "discard": false
     },
     {
+      "number": 25,
       "suit": "hearts",
-      "value": "K"
+      "dealt": false,
+      "value": "K",
+      "discard": false
     },
     {
+      "number": 26,
       "suit": "hearts",
-      "value": "A"
+      "dealt": false,
+      "value": "A",
+      "discard": false
     },
     
     {
+      "number": 27,
       "suit": "clubs",
-      "value": 2
+      "dealt": false,
+      "value": "2",
+      "discard": false
     },
     {
+      "number": 28,
       "suit": "clubs",
-      "value": 3
+      "dealt": false,
+      "value": "3",
+      "discard": false
     },
     {
+      "number": 29,
       "suit": "clubs",
-      "value": 4
+      "dealt": false,
+      "value": "4",
+      "discard": false
     },
     {
+      "number": 30,
       "suit": "clubs",
-      "value": 5
+      "dealt": false,
+      "value": "5",
+      "discard": false
     },
     {
+      "number": 31,
       "suit": "clubs",
-      "value": 6
+      "dealt": false,
+      "value": "6",
+      "discard": false
     },
     {
+      "number": 32,
       "suit": "clubs",
-      "value": 7
+      "dealt": false,
+      "value": "7",
+      "discard": false
     },
     {
+      "number": 33,
       "suit": "clubs",
-      "value": 8
+      "dealt": false,
+      "value": "8",
+      "discard": false
     },
     {
+      "number": 34,
       "suit": "clubs",
-      "value": 9
+      "dealt": false,
+      "value": "9",
+      "discard": false
     },
     {
+      "number": 35,
       "suit": "clubs",
-      "value": 10
+      "dealt": false,
+      "value": "10",
+      "discard": false
     },
     {
+      "number": 36,
       "suit": "clubs",
-      "value": "J"
+      "dealt": false,
+      "value": "J",
+      "discard": false
     },
     {
+      "number": 37,
       "suit": "clubs",
-      "value": "Q"
+      "dealt": false,
+      "value": "Q",
+      "discard": false
     },
     {
+      "number": 38,
       "suit": "clubs",
-      "value": "K"
+      "dealt": false,
+      "value": "K",
+      "discard": false
     },
     {
+      "number": 39,
       "suit": "clubs",
-      "value": "A"
+      "dealt": false,
+      "value": "A",
+      "discard": false
     },
     {
+      "number": 40,
         "suit": "diamonds",
-        "value": 2
+        "dealt": false,
+        "value": "2",
+        "discard": false
       },
       {
+        "number": 41,
         "suit": "diamonds",
-        "value": 3
+        "dealt": false,
+        "value": "3",
+        "discard": false
       },
       {
+        "number": 42,
         "suit": "diamonds",
-        "value": 4
+        "dealt": false,
+        "value": "4",
+        "discard": false
       },
       {
+        "number": 43,
         "suit": "diamonds",
-        "value": 5
+        "dealt": false,
+        "value": "5",
+        "discard": false
       },
       {
+        "number": 44,
         "suit": "diamonds",
-        "value": 6
+        "dealt": false,
+        "value": "6",
+        "discard": false
       },
       {
+        "number": 45,
         "suit": "diamonds",
-        "value": 7
+        "dealt": false,
+        "value": "7",
+        "discard": false
       },
       {
+        "number": 46,
         "suit": "diamonds",
-        "value": 8
+        "dealt": false,
+        "value": "8",
+        "discard": false
       },
       {
+        "number": 47,
         "suit": "diamonds",
-        "value": 9
+        "dealt": false,
+        "value": "9",
+        "discard": false
       },
       {
+        "number": 48,
         "suit": "diamonds",
-        "value": 10
+        "dealt": false,
+        "value": "10",
+        "discard": false
       },
       {
+        "number": 49,
         "suit": "diamonds",
-        "value": "J"
+        "dealt": false,
+        "value": "J",
+        "discard": false
       },
       {
+        "number": 50,
         "suit": "diamonds",
-        "value": "Q"
+        "dealt": false,
+        "value": "Q",
+        "discard": false
       },
       {
+        "number": 51,
         "suit": "diamonds",
-        "value": "K"
+        "dealt": false,
+        "value": "K",
+        "discard": false
       },
       {
+        "number": 52,
         "suit": "diamonds",
-        "value": "A"
+        "dealt": false,
+        "value": "A",
+        "discard": false
       }
   ];
 

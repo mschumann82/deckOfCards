@@ -3,19 +3,16 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>FriendFinder</title>
+  <title>Deck of Cards</title>
 
   <!-- Latest compiled and minified CSS & JS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-  <script src="https://code.jquery.com/jquery.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  		<script src="https://code.jquery.com/jquery.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+      
+		
 
-  <!-- Font Awesome Glyphicons -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
-
-  <!-- Chosen -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.5.1/chosen.css">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.5.1/chosen.jquery.min.js"></script>
+  
 
 </head>
 
@@ -24,7 +21,9 @@
   <div class="container">
 
     <h2>Deck of Cards</h2>
-    
+    <div class="container">
+        <p><a href="/api/cards">API for cards</a> | <a href="https://github.com/mschumann82/deckOfCards">GitHub Repo</a></p>
+    </div>
 
     <br>
     <br>
@@ -35,33 +34,153 @@
     <!-- Shuffle Button -->
     <button type="submit" class="btn btn-primary " id="shuffle">
       Shuffle Deck</button>
-    
+       <!-- Order Button -->
+      <button type="submit" class="btn btn-primary " id="order">
+        Order Remaining Deck</button>
+        <!-- Rebuild Button -->
+        <button type="submit" class="btn btn-primary " id="rebuild">
+          Rebuild Deck</button>
+    <br><br>
     <!-- Cut Button -->
     <button type="submit" class="btn btn-primary " id="cutDeck">
       Cut Deck</button>
-    <!-- Order Button -->
-    <button type="submit" class="btn btn-primary " id="order">
-      Order Remaining Deck</button>
-    <!-- Rebuild Button -->
-    <button type="submit" class="btn btn-primary " id="rebuild">
-      Rebuild Deck</button>
+    <input type="text" id="discard" placeholder="enter number 1 - 52" class="form-control">
+    
+    
       <br> <br>
     <!-- Discard Input -->
-    <input type="text" id="discard" class="form-control">
-    <!-- Discard Button -->
     <button type="submit" class="btn btn-primary " id="discardCard">
       Discard Card</button>
-    <hr>
-    <footer class="footer">
-      <div class="container">
-        <p><a href="/api/cards">API for cards</a> | <a href="https://github.com/mschumann82/deckOfCards">GitHub Repo</a></p>
-      </div>
-    </footer>
+    <input type="text" id="discard" class="form-control">
+    <!-- Discard Button -->
+    
+    
+    <br><br>
+
+    <div id="results"> <!-- place to display results -->
+      <div>
+
+
+
+    
 
   </div>
 
   
 
 </body>
+
+
+<script>
+  
+  let originalOrder = [];
+  let playedDeal = [];
+
+
+  function getCards() {
+    
+    $.get("/api/cards",  function(data) { // AJAX get the data to the cards API.
+      
+      originalOrder = data;
+      console.log(originalOrder);
+      playedDeal = data;
+      console.log(playedDeal);
+      });
+  }
+  getCards();
+
+
+
+
+  function dealCard() {
+   
+    event.preventDefault();
+    let dealtCard = {};
+    console.log(playedDeal);
+    $("#results").empty(); // empties results div.
+    // AJAX get the data to the cards API.
+      for (let i = 0; i < playedDeal.length; i++) {
+        if (playedDeal[i].dealt === true) {
+          console.log("this card has been dealt");
+        }
+        else {
+          dealtCard = {
+            number: playedDeal[i].number,
+            suit: playedDeal[i].suit,
+            dealt: true,
+            value: playedDeal[i].value,
+            discard: playedDeal[i].dicard
+          };
+
+          console.log(dealtCard);
+          $("#results").append(dealtCard.suit + " " + dealtCard.value);
+          playedDeal[i] = dealtCard;
+          
+          break;
+        }
+      }
+      
+      
+      
+    };
+    
+    
+  function shuffleCards() {
+    event.preventDefault();
+    $("#results").empty();
+    playedDeal = playedDeal.sort(function(a, b) {return 0.5 - Math.random()});
+    console.log(playedDeal);
+    for (i = 0; i < playedDeal.length; i++) {
+      let card = playedDeal[i];
+      $("#results").append(card.suit + " " + card.value + " |");
+    }
+  }
+
+  function cutDeck() {
+    event.preventDefault();
+    $("#results").empty();
+  }
+
+  function compare(a,b) {
+  if (playedDeal.number < playedDeal.number)
+    return -1;
+  if (playedDeal.number > playedDeal.number)
+    return 1;
+  return 0;
+}
+
+  function orderCards() {
+    event.preventDefault();
+    $("#results").empty();
+    playedDeal.sort(function(a,b){return a.number - b.number})
+    console.log(playedDeal);
+    for (i = 0; i < playedDeal.length; i++) {
+      let card = playedDeal[i];
+      if (card.discard === false) {
+      $("#results").append(card.suit + " " + card.value + " |");
+      }
+    }
+  }
+
+  function rebuild() {
+    event.preventDefault();
+    $("#results").empty();
+  }
+
+  function discarCard() {
+    event.preventDefault();
+    $("#results").empty();
+  }
+
+  $(document).on("click", "#deal", dealCard);
+  $(document).on("click", "#shuffle", shuffleCards);
+  // $(document).on("click", "#cutDeck", cutDeck);
+  $(document).on("click", "#order", orderCards);
+  // $(document).on("click", "#rebuild", rebuild);
+  // $(document).on("click", "#discardCard", discarCard);
+
+</script>
+
+ 
 
 </html>
