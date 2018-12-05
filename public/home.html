@@ -162,9 +162,16 @@
     }
   }
 
-  function rebuild() {
+  function rebuildDeck() {
     event.preventDefault();
     $("#results").empty();
+    playedDeal = originalOrder;
+    for (i = 0; i < playedDeal.length; i++) {
+      let card = playedDeal[i];
+      
+      $("#results").append(card.suit + " " + card.value + " |");
+      
+    }
   }
 
   function discarCard() {
@@ -176,7 +183,7 @@
   $(document).on("click", "#shuffle", shuffleCards);
   // $(document).on("click", "#cutDeck", cutDeck);
   $(document).on("click", "#order", orderCards);
-  // $(document).on("click", "#rebuild", rebuild);
+  $(document).on("click", "#rebuild", rebuildDeck);
   // $(document).on("click", "#discardCard", discarCard);
 
 </script>
