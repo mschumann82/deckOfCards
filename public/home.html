@@ -44,16 +44,37 @@
     <!-- Cut Button -->
     <button type="submit" class="btn btn-primary " id="cutDeck">
       Cut Deck</button>
-    <input type="text" id="discard" placeholder="enter number 1 - 52" class="form-control">
+    <input type="text" id="cut" placeholder="enter number 1 - 52" class="form-control">
     
     
       <br> <br>
     <!-- Discard Input -->
     <button type="submit" class="btn btn-primary " id="discardCard">
       Discard Card</button>
-    <input type="text" id="discard" class="form-control">
-    <!-- Discard Button -->
-    
+      <select id="discardSuit">
+        <option value="spades">Spades</option>
+        <option value="hearts">Hearts</option>
+        <option value="clubs">Clubs</option>
+        <option value="diamonds">Diamonds</option>
+      </select>
+      <select id="discardValue">
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
+        <option value="J">J</option>
+        <option value="Q">Q</option>
+        <option value="K">K</option>
+        <option value="A">A</option>
+        
+      </select>
+      <button type="submit" class="btn btn-primary " id="showDiscard">
+        Show All Discarded</button>
     
     <br><br>
 
@@ -139,6 +160,36 @@
   function cutDeck() {
     event.preventDefault();
     $("#results").empty();
+    let cut = $("#cut").val().trim();
+    console.log(cut);
+    if (isNaN(cut) || cut < 1 || cut > 52) {
+      $("#results").append("Input not valid");
+    
+  } else {
+    let bottomDeck = playedDeal.slice(0, cut);
+    console.log(bottomDeck);
+    let topDeck = playedDeal.slice(cut, playedDeal.length);
+    console.log(topDeck);
+    playedDeal = [];
+    for (i = bottomDeck.length - 1; i >= 0; i--) {
+      let card = bottomDeck[i];
+      playedDeal.push(card);
+            
+    }
+    for (i = topDeck.length - 1; i >= 0; i--) {
+      let card = topDeck[i];
+      playedDeal.push(card);
+            
+    }
+    console.log(playedDeal);
+    for (i = 0; i < playedDeal.length; i++) {
+      let card = playedDeal[i];
+      
+      $("#results").append(card.number +  " |");
+      
+    }
+  }
+    
   }
 
   function compare(a,b) {
@@ -177,14 +228,41 @@
   function discarCard() {
     event.preventDefault();
     $("#results").empty();
+    let chosenSuit = $("#discardSuit").val();
+    console.log(chosenSuit);
+    let chosenValue = $("#discardValue").val();
+    console.log(chosenValue);
+    for (let i = 0; i < playedDeal.length; i++) {
+      let card = playedDeal[i];
+      
+      if (chosenSuit === playedDeal[i].suit && chosenValue === playedDeal[i].value) {
+        playedDeal[i].discard = true;
+        $("#results").append(card.suit + " " + card.value + " was discarded");
+      }
+      
+    }
+  }
+
+  function showDiscarded() {
+    event.preventDefault();
+
+    $("#results").empty();
+
+    for (let i = 0; i < playedDeal.length; i++) {
+      let card = playedDeal[i];
+      if (card.discard === true) {
+        $("#results").append(card.suit + " " + card.value + " |");
+      }
+    }
   }
 
   $(document).on("click", "#deal", dealCard);
   $(document).on("click", "#shuffle", shuffleCards);
-  // $(document).on("click", "#cutDeck", cutDeck);
+  $(document).on("click", "#cutDeck", cutDeck);
   $(document).on("click", "#order", orderCards);
   $(document).on("click", "#rebuild", rebuildDeck);
-  // $(document).on("click", "#discardCard", discarCard);
+  $(document).on("click", "#discardCard", discarCard);
+  $(document).on("click", "#showDiscard", showDiscarded);
 
 </script>
 
