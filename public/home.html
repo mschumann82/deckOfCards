@@ -128,7 +128,7 @@
             suit: playedDeal[i].suit,
             dealt: true,
             value: playedDeal[i].value,
-            discard: playedDeal[i].dicard
+            discard: playedDeal[i].discard
           };
 
           console.log(dealtCard);
@@ -215,7 +215,9 @@
     event.preventDefault();
     $("#results").empty();
     playedDeal = originalOrder;
+    console.log(playedDeal);
     for (i = 0; i < playedDeal.length; i++) {
+      playedDeal[i].dealt = false;
       let card = playedDeal[i];
       
       $("#results").append(card.suit + " " + card.value + " |");
