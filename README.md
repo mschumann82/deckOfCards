@@ -4,7 +4,7 @@ link to site walkthrough: https://drive.google.com/file/d/12YntoEQEjIZwOXVn2zaT9
 
 NPM packages used: Express, body-parser, path.
 
-Instructions: In order to run the site you must run the server. Then in your browser go to http://localhost:3000/. You can then navigate the buttons for the requests. The requests are as follows:
+Instructions: In order to run the site you must run the server.js file on the command line. I used node so node server and then enter to connect. Then in your browser go to http://localhost:3000/. You can then navigate the buttons for the requests. The requests are as follows:
 
 Deal Card - Deals one card off the top of the deck.
 Shuffle - Randomizes all the cards remaining in the deck and that are in the discard pile.
