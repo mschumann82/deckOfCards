@@ -219,11 +219,10 @@
     for (i = 0; i < playedDeal.length; i++) {
       playedDeal[i].dealt = false;
       playedDeal[i].discard = false;
-      let card = playedDeal[i];
       
-      $("#results").append(card.suit + " " + card.value + " |");
       
     }
+    orderCards();
   }
 
   function discarCard() {
