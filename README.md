@@ -1,6 +1,6 @@
 # deckOfCards
 
-link to site walkthrough: https://drive.google.com/file/d/12YntoEQEjIZwOXVn2zaT9mGzaPDLJeqm/view?usp=sharing
+link to site walkthrough: https://drive.google.com/file/d/11qp5V0n0xsPJL1J4lmwDNEvZK4sJ7MxR/view?usp=sharing
 
 NPM packages used: Express, body-parser, path.
 
