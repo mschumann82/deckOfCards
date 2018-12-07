@@ -169,16 +169,18 @@
     let topDeck = playedDeal.slice(cut, playedDeal.length);
     console.log(topDeck);
     playedDeal = [];
-    for (i = bottomDeck.length - 1; i >= 0; i--) {
-      let card = bottomDeck[i];
-      playedDeal.push(card);
-            
-    }
-    for (i = topDeck.length - 1; i >= 0; i--) {
+    for (i = 0; i < topDeck.length; i++) {
       let card = topDeck[i];
       playedDeal.push(card);
             
     }
+
+    for (i = 0; i < bottomDeck.length; i++) {
+      let card = bottomDeck[i];
+      playedDeal.push(card);
+            
+    }
+    
     console.log(playedDeal);
     for (i = 0; i < playedDeal.length; i++) {
       let card = playedDeal[i];
